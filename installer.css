@@ -6,9 +6,8 @@ body {
 
 .split-screen {
   display: flex;
-  height: 80vh;
-  justify-content: center;
-  align-items: center;
+  /* height: 80vhs; */
+  position: relative; /* Add position relative */
 }
 
 #bg-video {
@@ -20,30 +19,29 @@ body {
   z-index: -1; 
 }
 
+.logo-left {
+  position: absolute; /* Add position absolute */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  padding: 20px; /* Adjust padding as needed */
+}
 
 .logo-left img {
   max-width: 250px; 
-  margin-left: 50px;
-  margin-top: 30px;
-  border-radius: 5px;
-}
-
-.left-side{
-  width: 350px;
 }
 
 .container {
-   
-    padding: 2vw;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px rgb(33 31 31 / 40%);
-    background-color: rgb(255 255 255 / 40%);
-    border: 0px solid;
-    border-color: rgba(0, 0, 0, 0.1);
-    margin: 1vw;
-    
-    backdrop-filter: blur(10px);
-
+  width: 300px; /* Adjust container width as needed */
+  margin: auto; /* Center horizontally */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgb(33 31 31 / 40%);
+  background-color: rgba(255, 255, 255, 0.4); /* Change opacity */
+  border: 0px solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  top:25vh;
 }
 
 .logo {
@@ -53,17 +51,21 @@ body {
 
 .logo img {
   max-width: 80px;
-
 }
 
 h1 {
   text-align: center;
   color: rgb(0, 0, 0);
-  font-size: 18x;
+  font-size: 18px; /* Correct font-size unit */
 }
 
 .login-form .input-container {
   margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+ 
+  flex-direction: column;
+  text-align: left;
 }
 
 .login-form label {
@@ -73,22 +75,26 @@ h1 {
 }
 
 .input-field {
-  width: 85%; 
-  color: rgb(0, 0, 0); 
-  background-color: rgba(137, 137, 131, 0.3); 
-  padding: 20px;
+  width: 90%; /* Adjust width */
+  color: rgb(0, 0, 0);
+  background-color: white;
+   padding-top: 2vh;
+   padding-bottom: 2vh;
+   padding-left: 1vh;
+   padding-right: 3vh;
   border-radius: 8px;
   border: 1.2px solid #f2e319;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
 }
 
-
 .input-field::placeholder {
-  color: rgb(0, 0, 0); 
+  color: rgb(0, 0, 0);
 }
 
 .input-field:hover {
-  background-color: rgba(0, 0, 0, 0.3); 
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .loginbtns {
@@ -96,7 +102,7 @@ h1 {
 }
 
 .login-form button {
-  max-width: 100%; 
+  max-width: 100%;
   display: inline-block;
   padding: 12px 20px;
   border: 1.2px solid;
@@ -111,3 +117,22 @@ h1 {
   background-color: #313132;
   color: white;
 }
+/* Media Query for screens at 361px */
+ @media only screen and (max-width: 668px) {
+  .container {
+    width: 265px;
+    margin-top: 100px;
+    margin-bottom: 8vw;
+
+  }
+  .logo-left {
+    display: block;
+    width: 100%;
+    position: absolute;
+ 
+    padding: 0px;
+    /* display: flex; */
+    text-align: center;
+   
+}
+} 
